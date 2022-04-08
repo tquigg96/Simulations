@@ -14,6 +14,9 @@ class Grid:
         self.size = (self.rows, self.columns)
         self.matrix = np.ndarray(self.size)
         self.offset = offset
+    
+    def __del__(self):
+        print("destructor called")
 
     def gridInit(self):
         '''

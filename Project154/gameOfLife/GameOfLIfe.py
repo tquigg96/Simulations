@@ -56,7 +56,7 @@ class Grid:
                     #Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
                     elif state == 0 and neigh == 3:
                         temp[x][y] = 1
-                    #Any live cell with two or three live neighbours lives on to the next generation.
+                    #Any live cell with two or three live neighbours lives on to the next generation or do nothing and update temp with 0
                     else:
                         temp[x][y] = state
             self.matrix = temp #change the matrix based on the rules

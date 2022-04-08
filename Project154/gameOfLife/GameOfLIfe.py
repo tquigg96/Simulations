@@ -10,9 +10,7 @@ class Grid:
 
         self.columns = int(height/scale)
         self.rows = int(width/scale)
-
-        self.size = (self.rows, self.columns)
-        self.matrix = np.ndarray(self.size)
+        self.matrix = np.ndarray((self.rows, self.columns))
         self.offset = offset
     
     def __del__(self):
@@ -41,7 +39,7 @@ class Grid:
                 else:
                     pygame.draw.rect(surface, off, [xPos, yPos, diff, diff])
         #temp matrix to look at the next state
-        temp = np.ndarray(self.size)
+        temp = np.ndarray((self.rows, self.columns))
 
         if pause == False:
             for x in range(self.rows):
@@ -81,11 +79,10 @@ os.environ["SDL_VIDEO_CENTERED"]='1'
 
 #resolution
 width, height = 1920,1080
-size = (width, height)
 
 pygame.init()
 pygame.display.set_caption("Conway's Game OF Life")
-screen = pygame.display.set_mode(size)
+screen = pygame.display.set_mode((width, height))
 clock = pygame.time.Clock()
 fps = 30
 
